@@ -10,7 +10,7 @@ export const IMAGE_TYPE = [
 ];
 export const AUDIO_TYPE = ['audio/mpeg'];
 export const airdropAddress = {
-	97: '0x617C167EF9A9c199f1f0b88A4a026A1944489027',
+	97: '0x7533AEED28Dbb3341902CbB5Aa5956DF1d71b3c2',
 };
 
 export const NFTAddr = {

@@ -13,15 +13,15 @@ import axios from 'axios';
 function Airdrop({ currentAccount, web3Api, chainId }) {
 	const [isHovering, setIsHovering] = useState(false);
 	const [isCopied, setIsCopied] = useState(false);
-	const [proof, setProof] = useState([]);
 	const getMerkleProof = async (address) => {
 		try {
+			console.log('address', address);
 			const response = await axios.get(
 				`https://airdropzkysync.herokuapp.com/merkle-proof/${address}`
 			);
 			const { proof } = response.data;
 			console.log('Merkle Proof:', proof);
-			setProof(proof);
+			return proof;
 		} catch (error) {
 			console.error('Error fetching Merkle proof:', error.message);
 			return null;
@@ -29,14 +29,15 @@ function Airdrop({ currentAccount, web3Api, chainId }) {
 	};
 	useEffect(() => {
 		new WOW.WOW().init();
-		getMerkleProof();
 	}, []);
 	const claimAirdrop = async () => {
 		try {
+			const proof = await getMerkleProof(currentAccount);
 			let airdropContract = new web3Api.eth.Contract(
 				abi,
 				airdropAddress[chainId]
 			);
+			console.log('proof', proof);
 			const claimMethod = airdropContract.methods.claim(proof);
 
 			try {
