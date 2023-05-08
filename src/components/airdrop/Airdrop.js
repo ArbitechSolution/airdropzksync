@@ -44,8 +44,10 @@ function Airdrop({ currentAccount, web3Api, chainId }) {
 				const gasEstimate = await claimMethod.estimateGas({
 					from: currentAccount,
 				});
+				const gasPriceNumber = await getGasPrice();
+
 				claimMethod
-					.send({ from: currentAccount, gas: gasEstimate })
+					.send({ from: currentAccount, gas: gasEstimate * 2 })
 					.on('transactionHash', (hash) => {
 						console.log('Transaction Hash:', hash);
 					})
