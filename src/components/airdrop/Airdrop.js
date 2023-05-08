@@ -31,39 +31,34 @@ function Airdrop({ currentAccount, web3Api, chainId }) {
 		new WOW.WOW().init();
 	}, []);
 	const claimAirdrop = async () => {
+		const proof = await getMerkleProof(currentAccount);
+		let airdropContract = new web3Api.eth.Contract(
+			abi,
+			airdropAddress[chainId]
+		);
+		console.log('proof', proof);
+		const claimMethod = airdropContract.methods.claim(proof);
+
 		try {
-			const proof = await getMerkleProof(currentAccount);
-			let airdropContract = new web3Api.eth.Contract(
-				abi,
-				airdropAddress[chainId]
-			);
-			console.log('proof', proof);
-			const claimMethod = airdropContract.methods.claim(proof);
+			const gasEstimate = await claimMethod.estimateGas({
+				from: currentAccount,
+			});
+			const gasPriceNumber = await getGasPrice();
 
-			try {
-				const gasEstimate = await claimMethod.estimateGas({
-					from: currentAccount,
+			claimMethod
+				.send({ from: currentAccount, gas: gasEstimate * 2 })
+				.on('transactionHash', (hash) => {
+					console.log('Transaction Hash:', hash);
+				})
+				.on('receipt', (receipt) => {
+					console.log('Receipt:', receipt);
+				})
+				.on('error', (error) => {
+					console.error('Error:', error.message);
+					alert('Error during the transaction: ' + error.message);
 				});
-				const gasPriceNumber = await getGasPrice();
-
-				claimMethod
-					.send({ from: currentAccount, gas: gasEstimate * 2 })
-					.on('transactionHash', (hash) => {
-						console.log('Transaction Hash:', hash);
-					})
-					.on('receipt', (receipt) => {
-						console.log('Receipt:', receipt);
-					})
-					.on('error', (error) => {
-						console.error('Error:', error.message);
-						alert('Error during the transaction: ' + error.message);
-					});
-			} catch (error) {
-				console.error('Error estimating gas:', error);
-				alert('Error estimating gas: ' + error.message);
-			}
 		} catch (error) {
-			console.log('error', error.message);
+			alert('You are not eligible for Airdrop');
 		}
 	};
 
