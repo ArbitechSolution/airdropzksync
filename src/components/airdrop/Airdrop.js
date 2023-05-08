@@ -8,25 +8,36 @@ import { getGasPrice } from '../../utils/utils';
 import { ethers, BigNumber } from 'ethers';
 import { abi } from './abi';
 import { airdropAddress } from '../../config/constants';
+import axios from 'axios';
 
 function Airdrop({ currentAccount, web3Api, chainId }) {
-	useEffect(() => {
-		new WOW.WOW().init();
-	}, []);
-
 	const [isHovering, setIsHovering] = useState(false);
 	const [isCopied, setIsCopied] = useState(false);
+	const [proof, setProof] = useState([]);
+	const getMerkleProof = async (address) => {
+		try {
+			const response = await axios.get(
+				`https://airdropzkysync.herokuapp.com/merkle-proof/${address}`
+			);
+			const { proof } = response.data;
+			console.log('Merkle Proof:', proof);
+			setProof(proof);
+		} catch (error) {
+			console.error('Error fetching Merkle proof:', error.message);
+			return null;
+		}
+	};
+	useEffect(() => {
+		new WOW.WOW().init();
+		getMerkleProof();
+	}, []);
 	const claimAirdrop = async () => {
 		try {
 			let airdropContract = new web3Api.eth.Contract(
 				abi,
 				airdropAddress[chainId]
 			);
-			console.log('airdropContract', airdropContract);
-
-			const claimMethod = airdropContract.methods.claim([
-				'0x708e7cb9a75ffb24191120fba1c3001faa9078147150c6f2747569edbadee751',
-			]);
+			const claimMethod = airdropContract.methods.claim(proof);
 
 			try {
 				const gasEstimate = await claimMethod.estimateGas({
