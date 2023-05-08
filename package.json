@@ -43,6 +43,7 @@
 		"react-scripts": "4.0.3",
 		"react-slot-machine": "^1.0.0",
 		"react-tabs": "^3.2.3",
+		"react-toastify": "^9.0.3",
 		"react-transition-group": "^4.4.2",
 		"sass": "^1.45.1",
 		"three": "0.138.0",
