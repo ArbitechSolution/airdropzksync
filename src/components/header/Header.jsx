@@ -19,6 +19,7 @@ import {
 	CHAIN_INFO,
 	CHAIN_ZKMAIN,
 	CHAIN_ZKTEST,
+	CHAIN_BSCTEST,
 } from '../../config/constants';
 
 let web3Modal;
@@ -29,12 +30,11 @@ let chainIdSaved;
 // import Web3 from 'web3'
 function init() {
 	if (localStorage) {
-		chainIdSaved = localStorage.getItem('nftzksea-chainId');
 		if (chainIdSaved == undefined || chainIdSaved == 'undefined') {
-			chainIdSaved = CHAIN_ZKTEST;
+			chainIdSaved = CHAIN_BSCTEST;
 		}
 	} else {
-		chainIdSaved = CHAIN_ZKTEST;
+		chainIdSaved = CHAIN_BSCTEST;
 	}
 
 	let rpcOption = {};
@@ -43,6 +43,11 @@ function init() {
 		case CHAIN_BSC:
 			rpcOption = {
 				56: CHAIN_INFO[CHAIN_BSC].rpcUrls,
+			};
+			break;
+		case CHAIN_BSCTEST:
+			rpcOption = {
+				97: CHAIN_INFO[CHAIN_BSCTEST].rpcUrls,
 			};
 			break;
 		case CHAIN_ZKMAIN:

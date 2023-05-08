@@ -191,7 +191,11 @@ const FreeMint = () => {
 				setWeb3Api={setWeb3Api}
 				setChainId={setChainId}
 			/>
-			<Airdrop />
+			<Airdrop
+				currentAccount={currentAccount}
+				web3Api={web3Api}
+				chainId={chainId}
+			/>
 			{/* <section className="first-section">
 				<div className="autoContainer">
 					<div className="hero__bg">

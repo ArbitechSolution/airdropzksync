@@ -10,6 +10,7 @@
 		"@mui/lab": "^5.0.0-alpha.74",
 		"@mui/material": "^5.5.2",
 		"@openzeppelin/contracts": "^4.4.2",
+		"@openzeppelin/merkle-tree": "^1.0.4",
 		"@testing-library/jest-dom": "^5.16.1",
 		"@testing-library/react": "^12.1.2",
 		"@testing-library/user-event": "^13.5.0",
@@ -78,6 +79,5 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
-	},
-	"devDependencies": {}
+	}
 }
