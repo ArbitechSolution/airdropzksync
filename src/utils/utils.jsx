@@ -8,6 +8,7 @@ import {
 	CHAIN_INFO,
 	CHAIN_ZKMAIN,
 	CHAIN_ZKTEST,
+	CHAIN_BSCTEST,
 } from '../config/constants';
 
 export const getGasPrice = async () => {
@@ -52,6 +53,16 @@ export const getGasPrice = async () => {
 		case CHAIN_BSC:
 			web3 = new Web3(
 				new Web3.providers.HttpProvider(CHAIN_INFO[CHAIN_BSC].rpcUrls)
+			);
+			gasPriceInUnits = await web3.eth.getGasPrice();
+			gasPriceNumber = fromExponential(
+				parseFloat(ethers.utils.formatUnits(gasPriceInUnits, 9)) *
+					Math.pow(10, 9)
+			);
+			break;
+		case CHAIN_BSCTEST:
+			web3 = new Web3(
+				new Web3.providers.HttpProvider(CHAIN_INFO[CHAIN_BSCTEST].rpcUrls)
 			);
 			gasPriceInUnits = await web3.eth.getGasPrice();
 			gasPriceNumber = fromExponential(
