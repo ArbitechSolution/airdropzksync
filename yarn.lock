@@ -17058,10 +17058,10 @@
     "clsx" "^1.1.0"
     "prop-types" "^15.5.0"
 
-"react-toastify@^9.0.3":
-  "integrity" "sha512-0QZJk0SqYBxouRBGCFU3ymvjlwimRRhVH7SzqGRiVrQ001KSoUNbGKx9Yq42aoPv18n45yJzEFG82zqv3HnASg=="
-  "resolved" "https://registry.npmjs.org/react-toastify/-/react-toastify-9.0.3.tgz"
-  "version" "9.0.3"
+"react-toastify@^9.1.2":
+  "integrity" "sha512-PBfzXO5jMGEtdYR5jxrORlNZZe/EuOkwvwKijMatsZZm8IZwLj01YvobeJYNjFcA6uy6CVrx2fzL9GWbhWPTDA=="
+  "resolved" "https://registry.npmjs.org/react-toastify/-/react-toastify-9.1.2.tgz"
+  "version" "9.1.2"
   dependencies:
     "clsx" "^1.1.1"
 
