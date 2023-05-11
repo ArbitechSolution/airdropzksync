@@ -1,198 +1,212 @@
-import React, { useEffect } from 'react';
-import zada from '../../assets/images/airdrop/image.png';
-import WOW from 'wowjs';
-import { useState } from 'react';
-import 'animate.css/animate.min.css';
-import './Airdrop.css';
-import { getGasPrice } from '../../utils/utils';
-import { ethers, BigNumber } from 'ethers';
-import { abi } from './abi';
-import { airdropAddress } from '../../config/constants';
-import axios from 'axios';
-
+import React, { useEffect } from "react";
+import zada from "../../assets/images/airdrop/image.png";
+import WOW from "wowjs";
+import { useState } from "react";
+import "animate.css/animate.min.css";
+import "./Airdrop.css";
+import { getGasPrice } from "../../utils/utils";
+import { ethers, BigNumber } from "ethers";
+import { abi } from "./abi";
+import { airdropAddress } from "../../config/constants";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function Airdrop({ currentAccount, web3Api, chainId }) {
-	const [isHovering, setIsHovering] = useState(false);
-	const [isCopied, setIsCopied] = useState(false);
-	const getMerkleProof = async (address) => {
-		try {
-			console.log('address', address);
-			const response = await axios.get(
-				`https://airdropzkysync.herokuapp.com/merkle-proof/${address}`
-			);
-			const { proof } = response.data;
-			console.log('Merkle Proof:', proof);
-			return proof;
-		} catch (error) {
-			console.error('Error fetching Merkle proof:', error.message);
-			return null;
-		}
-	};
-	useEffect(() => {
-		new WOW.WOW().init();
-	}, []);
-	const claimAirdrop = async () => {
-		const proof = await getMerkleProof(currentAccount);
-		let airdropContract = new web3Api.eth.Contract(
-			abi,
-			airdropAddress[chainId]
-		);
-		console.log('proof', proof);
-		const claimMethod = airdropContract.methods.claim(proof);
+  const [isHovering, setIsHovering] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
+  const [totalClamied, setTotalClamied] = useState(0);
+  const getMerkleProof = async (address) => {
+    try {
+      console.log("address", address);
+      const response = await axios.get(
+        `https://airdropzkysync.herokuapp.com/merkle-proof/${address}`
+      );
+      const { proof } = response.data;
+      console.log("Merkle Proof:", proof);
+      return proof;
+    } catch (error) {
+      console.error("Error fetching Merkle proof:", error.message);
+      return null;
+    }
+  };
+  useEffect(async () => {
+    new WOW.WOW().init();
+  }, []);
 
-		try {
-			const gasEstimate = await claimMethod.estimateGas({
-				from: currentAccount,
-			});
-			const gasPriceNumber = await getGasPrice();
+  const claimAirdrop = async () => {
+    const proof = await getMerkleProof(currentAccount);
+    let airdropContract = new web3Api.eth.Contract(
+      abi,
+      airdropAddress[chainId]
+    );
+    console.log("proof", proof);
+    const claimMethod = airdropContract.methods.claim(proof);
 
-			claimMethod
-				.send({ from: currentAccount, gas: gasEstimate * 2 })
-				.on('transactionHash', (hash) => {
-					console.log('Transaction Hash:', hash);
-				})
-				.on('receipt', (receipt) => {
-					console.log('Receipt:', receipt);
-				})
-				.on('error', (error) => {
-					console.error('Error:', error.message);
-					alert('Error during the transaction: ' + error.message);
-				});
-		} catch (error) {
-			alert('You are not eligible for Airdrop');
-		}
-	};
+    try {
+      const gasEstimate = await claimMethod.estimateGas({
+        from: currentAccount,
+      });
+      const gasPriceNumber = await getGasPrice();
 
-	const handleMouseEnter = () => {
-		setIsHovering(true);
-	};
+      claimMethod
+        .send({ from: currentAccount, gas: gasEstimate * 2 })
+        .on("transactionHash", (hash) => {
+          console.log("Transaction Hash:", hash);
+        })
+        .on("receipt", (receipt) => {
+          console.log("Receipt:", receipt);
+        })
+        .on("error", (error) => {
+          console.error("Error:", error.message);
+          toast("Error during the transaction: " + error.message);
+        });
+    } catch (error) {
+      toast("You are not eligible for Airdrop");
+    }
+  };
+  const totalClaimed = async () => {
+    let airdropContract = new web3Api.eth.Contract(
+      abi,
+      airdropAddress[chainId]
+    );
+    const totalClaimed = airdropContract.methods
+      .totalClaimed()
+      .call({ from: currentAccount });
+    console.log("totalClaimed", totalClaimed);
+    setTotalClamied(totalClaimed);
+  };
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+  };
 
-	const handleMouseLeave = () => {
-		setIsHovering(false);
-	};
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+  };
 
-	const handleCopyClick = () => {
-		setIsCopied(true);
-		setTimeout(() => {
-			setIsCopied(false);
-		}, 3000);
-	};
+  const handleCopyClick = () => {
+    setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 3000);
+  };
 
-	return (
-		<div>
-			<div className="main">
-				<section className="benefits" id="benefits">
-					<div className="autoContainer">
-						<div className="benefits__inner">
-							<div
-								className="benefits__item wow fadeInUp"
-								data-wow-duration="1s"
-							>
-								<div
-									className="benefits__item-logo wow fadeInUp"
-									data-wow-duration="1s"
-									data-wow-delay=".6s"
-								>
-									<img src={zada} alt="zksea" />
-								</div>
-								<h3
-									className=" wow fadeInUp header-text"
-									data-wow-duration="1s"
-									data-wow-delay=".7s"
-								>
-									Mint Free NFT to Claim
-									<span className="text--primary">$ZKZ Airdrop</span>
-								</h3>
-								<p
-									className=" wow fadeInUp"
-									data-wow-duration="1s"
-									data-wow-delay=".8s"
-								>
-									Mint this Sea Monster NFT and double your airdrop plus keep in
-									touch with new cross-chain marketplace deployment and more!
-								</p>
-								<p
-									className="_xlg wow fadeInUp"
-									data-wow-duration="1s"
-									data-wow-delay=".9s"
-								>
-									You can mint Sea Monster NFT on Arbitrum or zkSync chain. You
-									can use AnySwap Bridge to move Ether to the Arbitrum chain. To
-									move ether to zkSync use zkSync Brdge
-								</p>
-								<div className="benefits__item-footer">
-									<a
-										href="#lastSection"
-										className="button button--primary wow fadeInUp"
-										data-wow-duration="1s"
-										data-wow-delay="1s"
-									>
-										Mint Now
-									</a>
-								</div>
-							</div>
-							<div
-								className="benefits__item wow fadeInUp"
-								data-wow-duration="1s"
-							>
-								<div
-									className="benefits__item-logo wow fadeInUp"
-									data-wow-duration="1s"
-									data-wow-delay=".5s"
-								>
-									<img src={zada} alt="zksea" />
-								</div>
-								<h3
-									className="grow wow fadeInUp header-text"
-									data-wow-duration="1s"
-									data-wow-delay=".6s"
-								>
-									$PEPE Holders &amp; $ARB Airdrop wallets can claim
-									<span className="text--primary">$ZKZ now!</span>
-								</h3>
-								<div
-									className="benefits__item-progress wow fadeInUp"
-									data-wow-duration="1s"
-									data-wow-delay=".9s"
-								>
-									<span>Claimed</span>
-									<span>84,000,000,000,000</span>
-								</div>
-								<div className="benefits__item-footer">
-									<a
-										href="#"
-										className="button button--primary wow fadeInUp"
-										data-wow-duration="1s"
-										data-wow-delay="1s"
-										onClick={claimAirdrop}
-									>
-										Claim Air Drop
-									</a>
-									<button
-										className="button button--primary wow fadeInUp invite-friend-button"
-										data-wow-duration="1s"
-										data-wow-delay="1.1s"
-										id="inviteFriend"
-										onMouseEnter={handleMouseEnter}
-										onMouseLeave={handleMouseLeave}
-										onClick={handleCopyClick}
-									>
-										Invite Friend
-										<div
-											className={`popUp ${
-												isHovering || isCopied ? 'visible' : 'hidden'
-											}`}
-											id="invitePop"
-										>
-											<span>{isCopied ? 'Link copied' : 'Copy'}</span>
-										</div>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-			</div>
-		</div>
-	);
+  return (
+    <div>
+      <div className="main">
+        <ToastContainer />
+        <section className="benefits" id="benefits">
+          <div className="autoContainer">
+            <div className="benefits__inner">
+              <div
+                className="benefits__item wow fadeInUp"
+                data-wow-duration="1s"
+              >
+                <div
+                  className="benefits__item-logo wow fadeInUp"
+                  data-wow-duration="1s"
+                  data-wow-delay=".6s"
+                >
+                  <img src={zada} alt="zksea" />
+                </div>
+                <h3
+                  className=" wow fadeInUp header-text"
+                  data-wow-duration="1s"
+                  data-wow-delay=".7s"
+                >
+                  Mint Free NFT to Claim
+                  <span className="text--primary">$ZKZ Airdrop</span>
+                </h3>
+                <p
+                  className=" wow fadeInUp"
+                  data-wow-duration="1s"
+                  data-wow-delay=".8s"
+                >
+                  Mint this Sea Monster NFT and double your airdrop plus keep in
+                  touch with new cross-chain marketplace deployment and more!
+                </p>
+                <p
+                  className="_xlg wow fadeInUp"
+                  data-wow-duration="1s"
+                  data-wow-delay=".9s"
+                >
+                  You can mint Sea Monster NFT on Arbitrum or zkSync chain. You
+                  can use AnySwap Bridge to move Ether to the Arbitrum chain. To
+                  move ether to zkSync use zkSync Brdge
+                </p>
+                <div className="benefits__item-footer">
+                  <a
+                    href="#lastSection"
+                    className="button button--primary wow fadeInUp"
+                    data-wow-duration="1s"
+                    data-wow-delay="1s"
+                  >
+                    Mint Now
+                  </a>
+                </div>
+              </div>
+              <div
+                className="benefits__item wow fadeInUp"
+                data-wow-duration="1s"
+              >
+                <div
+                  className="benefits__item-logo wow fadeInUp"
+                  data-wow-duration="1s"
+                  data-wow-delay=".5s"
+                >
+                  <img src={zada} alt="zksea" />
+                </div>
+                <h3
+                  className="grow wow fadeInUp header-text"
+                  data-wow-duration="1s"
+                  data-wow-delay=".6s"
+                >
+                  $PEPE Holders &amp; $ARB Airdrop wallets can claim
+                  <span className="text--primary">$ZKZ now!</span>
+                </h3>
+                <div
+                  className="benefits__item-progress wow fadeInUp"
+                  data-wow-duration="1s"
+                  data-wow-delay=".9s"
+                >
+                  <span>Claimed</span>
+                  <span>84,000,000,000,000</span>
+                </div>
+                <div className="benefits__item-footer">
+                  <a
+                    href="#"
+                    className="button button--primary wow fadeInUp"
+                    data-wow-duration="1s"
+                    data-wow-delay="1s"
+                    onClick={claimAirdrop}
+                  >
+                    Claim Air Drop
+                  </a>
+                  <button
+                    className="button button--primary wow fadeInUp invite-friend-button"
+                    data-wow-duration="1s"
+                    data-wow-delay="1.1s"
+                    id="inviteFriend"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    onClick={handleCopyClick}
+                  >
+                    Invite Friend
+                    <div
+                      className={`popUp ${
+                        isHovering || isCopied ? "visible" : "hidden"
+                      }`}
+                      id="invitePop"
+                    >
+                      <span>{isCopied ? "Link copied" : "Copy"}</span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  );
 }
 export default Airdrop;
