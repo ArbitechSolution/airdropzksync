@@ -1,0 +1,38 @@
+.loader {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 16px solid #f3f3f3; /* Light grey */
+	border-top: 16px solid #acf10e; /* New color */
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	animation: spin 2s linear infinite;
+	z-index: 9999; /* Make sure it's on top of other elements */
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(
+		0,
+		0,
+		0,
+		0.5
+	); /* Add a dark semi-transparent background */
+	z-index: 9998; /* Make sure it's below the loader and above other elements */
+	pointer-events: none; /* Makes it non-interactive */
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
