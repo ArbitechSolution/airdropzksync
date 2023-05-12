@@ -175,7 +175,7 @@ function Airdrop({ currentAccount, web3Api, chainId }) {
                   <span className="text--primary">$PEPESUPER now!</span>
                 </h3>
                 <div
-                  className="benefits__item-progress wow fadeInUp"
+                  className="benefits__item-progress wow fadeInUp "
                   data-wow-duration="1s"
                   data-wow-delay=".9s"
                 >
