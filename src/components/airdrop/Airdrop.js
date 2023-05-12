@@ -113,7 +113,7 @@ function Airdrop({ currentAccount, web3Api, chainId }) {
 						padding: '20px',
 					}}
 				>
-					Claim <span className="text--primary">$PEPESUPER Airdrop</span>
+					Claim <span className="text--primary">$PEPESUPER&nbsp;</span>Airdrop
 				</h3>
 				<ToastContainer />
 				<section className="benefits" id="benefits">
@@ -130,12 +130,20 @@ function Airdrop({ currentAccount, web3Api, chainId }) {
 								>
 									<img src={zada} alt="zksea" style={{ maxWidth: '200%' }} />
 								</div>
-								<h3
+								{/* <h3
 									className=" wow fadeInUp header-text"
 									data-wow-duration="1s"
 									data-wow-delay=".7s"
 								>
-									Mint Free NFT to Claim
+									Mint Free NFT to Claim&nbsp
+									<span className="text--primary">$PEPESUPER Airdrop</span>
+								</h3> */}
+								<h3
+									className="wow fadeInUp header-text"
+									data-wow-duration="1s"
+									data-wow-delay=".7s"
+								>
+									Mint Free NFT to Claim&nbsp;
 									<span className="text--primary">$PEPESUPER Airdrop</span>
 								</h3>
 								<p
@@ -182,7 +190,7 @@ function Airdrop({ currentAccount, web3Api, chainId }) {
 									data-wow-duration="1s"
 									data-wow-delay=".6s"
 								>
-									$PEPE Holders &amp; $ARB Airdrop wallets can claim
+									$PEPE Holders &amp; $ARB Airdrop wallets can claim&nbsp;
 									<span className="text--primary">$PEPESUPER now!</span>
 								</h3>
 								<div
