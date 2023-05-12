@@ -291,16 +291,13 @@ const FreeMint = () => {
               </div>
             </div>
             <div className="nft__inner-header">
-              <h3>ZkSea: Spring Thaw</h3>
+              <h3>PEPE: Spring Thaw</h3>
               <span className="badge">0x864e</span>
               <Link to="#" className="badge">
                 <img src="/assets/images/zk/chain.svg" alt="" />
                 Link
               </Link>
-              <p className="xlg">
-                A commemorative NFT to mark the Linea launch amidst the zkEVM
-                spring.
-              </p>
+              <p className="xlg">An NFT to celebrate the PEPE Season</p>
             </div>
             <ul className="nft__inner-list">
               <li className="nft__inner-list-item">
@@ -310,14 +307,14 @@ const FreeMint = () => {
               <li className="nft__inner-list-item">
                 <span>Mint fee</span>
                 <div className="nft__inner-list-item-group">
-                  <strong>0.00069 ETH</strong>
+                  <strong>0.0040 BNB</strong>
                   <small>-$ 1.43</small>
                 </div>
               </li>
               <li className="nft__inner-list-item _footer">
                 <span id="lastSection">Mint fee</span>
                 <div className="nft__inner-list-item-group">
-                  <strong>0.00069 ETH</strong>
+                  <strong>0.0040 BNB</strong>
                   <small>-$ 1.43</small>
                 </div>
               </li>
@@ -326,7 +323,7 @@ const FreeMint = () => {
               <h3 className="color--danger">{errText}</h3>
               <div className="nft__inner-footer-content">
                 <button
-                  className="badge badge--black"
+                  className="badge  button--primary"
                   onClick={(e) => {
                     submit(e);
                   }}
