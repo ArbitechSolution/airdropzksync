@@ -217,13 +217,13 @@ const FreeMint = () => {
                   <span>Price</span>
                   <strong>Free</strong>
                 </li>
-                <li className="nft__inner-list-item">
+                {/* <li className="nft__inner-list-item">
                   <span>Mint fee</span>
                   <div className="nft__inner-list-item-group">
                     <strong>0.0040 BNB</strong>
                     <small>-$ 1.43</small>
                   </div>
-                </li>
+                </li> */}
                 <li className="nft__inner-list-item _footer">
                   <span id="lastSection">Mint fee</span>
                   <div className="nft__inner-list-item-group">

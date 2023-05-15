@@ -293,7 +293,7 @@ p.sm {
   font-size: 16px;
 }
 p.xlg {
-  font-size: 32px;
+  font-size: 27px;
 }
 
 .color--danger {
@@ -450,7 +450,7 @@ li {
     color-stop(75%, #06ffcc)
   );
   background: linear-gradient(90deg, #baff00 25%, #06ffcc 75%);
-  background-size: 200% 100%;
+  background-size: 200% 50%;
   background-position: 50%;
   -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
@@ -1032,8 +1032,8 @@ li {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  font-size: 28px;
-  padding: 1em;
+  font-size: 22px;
+  padding: 0.5em;
   border-bottom: 1px solid #362f3b;
   color: #a79fad;
   margin-bottom: 0.8em;
@@ -1074,7 +1074,7 @@ li {
 }
 .nft__inner-footer h3 {
   text-align: center;
-  margin-bottom: 1.2em;
+  margin-bottom: 0.6rem;
 }
 .nft__inner-footer-content {
   display: -webkit-box;
@@ -1087,17 +1087,17 @@ li {
   gap: 28px;
 }
 .nft__inner-footer-content .badge {
-  min-height: 85px;
-  font-size: 26px;
+  min-height: 50px !important;
+  font-size: 17px !important;
 }
 .nft__inner-footer-content .badge .spinner {
-  font-size: 32px;
+  font-size: 17px;
 }
 .nft__inner-footer-content .button {
   width: 100%;
 }
 .nft__inner-footer-content .button--primary {
-  min-height: 85px;
+  min-height: 65px;
 }
 .nft__inner-footer-content .button--text {
   width: unset;
@@ -1157,7 +1157,7 @@ li {
     font-size: 20px;
   }
   p.xlg {
-    font-size: 28px;
+    font-size: 26px;
   }
   .button {
     font-size: 22px;
@@ -1196,7 +1196,7 @@ li {
     line-height: 1.6em;
   }
   p.xlg {
-    font-size: 28px;
+    font-size: 25px;
   }
   .header {
     padding: 25px 0;
@@ -1225,8 +1225,8 @@ li {
     gap: 24px;
   }
   .nft__inner-footer-content .badge {
-    min-height: 75px;
-    font-size: 20px;
+    min-height: 50px;
+    font-size: 17px;
   }
   .nft__inner-footer-content .button--primary {
     min-height: 75px;
@@ -1399,8 +1399,8 @@ li {
     gap: 20px;
   }
   .nft__inner-footer-content .badge {
-    min-height: 65px;
-    font-size: 18px;
+    min-height: 50px;
+    font-size: 17px;
   }
   .nft__inner-footer-content .button--primary {
     min-height: 65px;
@@ -1449,7 +1449,7 @@ li {
     min-height: 60px;
   }
   .nft__inner-footer-content .badge {
-    min-height: 60px;
+    min-height: 50px;
     font-size: 16px;
   }
 }

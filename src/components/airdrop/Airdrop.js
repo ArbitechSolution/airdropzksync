@@ -147,14 +147,14 @@ function Airdrop({ currentAccount, web3Api, chainId }) {
                   Mint Free NFT to Claim&nbsp;
                   <span className="text--primary">$PEPESUPER Airdrop</span>
                 </h3>
-                <p
+                {/* <p
                   className=" wow fadeInUp py-3"
                   data-wow-duration="1s"
                   data-wow-delay=".8s"
                 >
                   Mint this Sea PEPE NFT and double your airdrop plus keep in
                   touch with new cross-chain marketplace deployment and more!
-                </p>
+                </p> */}
                 {/* <p
 									className="_xlg wow fadeInUp"
 									data-wow-duration="1s"
@@ -164,7 +164,10 @@ function Airdrop({ currentAccount, web3Api, chainId }) {
 									can use AnySwap Bridge to move Ether to the Arbitrum chain. To
 									move ether to PEPESUPER use PEPESUPER Brdge
 								</p> */}
-                <div className="benefits__item-footer py-3">
+                <div
+                  className="benefits__item-footer  py-4"
+                  style={{ marginTop: "80px" }}
+                >
                   <a
                     href="#lastSection"
                     className="button button--primary wow fadeInUp"
@@ -207,7 +210,7 @@ function Airdrop({ currentAccount, web3Api, chainId }) {
                   <span>Claimed</span>
                   <span>84,000,000,000,000</span>
                 </div>
-                <div className="benefits__item-footer py-5">
+                <div className="benefits__item-footer py-4">
                   <a
                     href="#"
                     className="button button--primary wow fadeInUp"
