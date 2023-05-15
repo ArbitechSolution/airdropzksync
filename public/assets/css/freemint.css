@@ -3,7 +3,7 @@
   from {
     opacity: 0;
     -webkit-transform: translate(-50%, -50%) scale(0.9);
-            transform: translate(-50%, -50%) scale(0.9);
+    transform: translate(-50%, -50%) scale(0.9);
   }
   30% {
     opacity: 1;
@@ -11,14 +11,14 @@
   to {
     opacity: 1;
     -webkit-transform: translate(-50%, -50%) scale(1);
-            transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 @keyframes zoomInCenter {
   from {
     opacity: 0;
     -webkit-transform: translate(-50%, -50%) scale(0.9);
-            transform: translate(-50%, -50%) scale(0.9);
+    transform: translate(-50%, -50%) scale(0.9);
   }
   30% {
     opacity: 1;
@@ -26,14 +26,14 @@
   to {
     opacity: 1;
     -webkit-transform: translate(-50%, -50%) scale(1);
-            transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 @-webkit-keyframes zoomIn {
   from {
     opacity: 0;
     -webkit-transform: scale(0.9);
-            transform: scale(0.9);
+    transform: scale(0.9);
   }
   30% {
     opacity: 1;
@@ -41,14 +41,14 @@
   to {
     opacity: 1;
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
 @keyframes zoomIn {
   from {
     opacity: 0;
     -webkit-transform: scale(0.9);
-            transform: scale(0.9);
+    transform: scale(0.9);
   }
   30% {
     opacity: 1;
@@ -56,38 +56,38 @@
   to {
     opacity: 1;
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
 @-webkit-keyframes fadeInUp {
   from {
     opacity: 0;
     -webkit-transform: translateY(10%);
-            transform: translateY(10%);
+    transform: translateY(10%);
   }
   to {
     opacity: 1;
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 @keyframes fadeInUp {
   from {
     opacity: 0;
     -webkit-transform: translateY(10%);
-            transform: translateY(10%);
+    transform: translateY(10%);
   }
   to {
     opacity: 1;
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 @-webkit-keyframes sticky {
   from {
     opacity: 0;
     -webkit-transform: translateY(-110%);
-            transform: translateY(-110%);
+    transform: translateY(-110%);
   }
   50% {
     opacity: 1;
@@ -95,14 +95,14 @@
   to {
     opacity: 1;
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 @keyframes sticky {
   from {
     opacity: 0;
     -webkit-transform: translateY(-110%);
-            transform: translateY(-110%);
+    transform: translateY(-110%);
   }
   50% {
     opacity: 1;
@@ -110,47 +110,47 @@
   to {
     opacity: 1;
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 @-webkit-keyframes animInUp {
   from {
     -webkit-transform: translateY(10%) scale(0.98);
-            transform: translateY(10%) scale(0.98);
+    transform: translateY(10%) scale(0.98);
   }
   to {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 @keyframes animInUp {
   from {
     -webkit-transform: translateY(10%) scale(0.98);
-            transform: translateY(10%) scale(0.98);
+    transform: translateY(10%) scale(0.98);
   }
   to {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 @-webkit-keyframes spinner {
   0% {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 @keyframes spinner {
   0% {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 .animInUp {
@@ -160,77 +160,87 @@
 
 .zoomInCenter {
   -webkit-animation-name: zoomInCenter;
-          animation-name: zoomInCenter;
+  animation-name: zoomInCenter;
   -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
 }
 
 @font-face {
   font-family: "Nexa";
-  src: url("../../../fonts/NexaLight.woff2") format("woff2"), url("../../../fonts/NexaLight.woff") format("woff");
+  src: url("../../../fonts/NexaLight.woff2") format("woff2"),
+    url("../../../fonts/NexaLight.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Nexa";
-  src: url("../../../fonts/NexaBold.woff2") format("woff2"), url("../../../fonts/NexaBold.woff") format("woff");
+  src: url("../../../fonts/NexaBold.woff2") format("woff2"),
+    url("../../../fonts/NexaBold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Nexa";
-  src: url("../../../fonts/Nexa-Black.woff2") format("woff2"), url("../../../fonts/Nexa-Black.woff") format("woff");
+  src: url("../../../fonts/Nexa-Black.woff2") format("woff2"),
+    url("../../../fonts/Nexa-Black.woff") format("woff");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Nexa";
-  src: url("../../../fonts/Nexa-Bold.woff2") format("woff2"), url("../../../fonts/Nexa-Bold.woff") format("woff");
+  src: url("../../../fonts/Nexa-Bold.woff2") format("woff2"),
+    url("../../../fonts/Nexa-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Nexa";
-  src: url("../../../fonts/Nexa-Book.woff2") format("woff2"), url("../../../fonts/Nexa-Book.woff") format("woff");
+  src: url("../../../fonts/Nexa-Book.woff2") format("woff2"),
+    url("../../../fonts/Nexa-Book.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Nexa";
-  src: url("../../../fonts/Nexa-Heavy.woff2") format("woff2"), url("../../../fonts/Nexa-Heavy.woff") format("woff");
+  src: url("../../../fonts/Nexa-Heavy.woff2") format("woff2"),
+    url("../../../fonts/Nexa-Heavy.woff") format("woff");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Nexa";
-  src: url("../../../fonts/Nexa-Light.woff2") format("woff2"), url("../../../fonts/Nexa-Light.woff") format("woff");
+  src: url("../../../fonts/Nexa-Light.woff2") format("woff2"),
+    url("../../../fonts/Nexa-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Nexa";
-  src: url("../../../fonts/Nexa-Thin.woff2") format("woff2"), url("../../../fonts/Nexa-Thin.woff") format("woff");
+  src: url("../../../fonts/Nexa-Thin.woff2") format("woff2"),
+    url("../../../fonts/Nexa-Thin.woff") format("woff");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Nexa";
-  src: url("../../../fonts/Nexa-XBold.woff2") format("woff2"), url("../../../fonts/Nexa-XBold.woff") format("woff");
+  src: url("../../../fonts/Nexa-XBold.woff2") format("woff2"),
+    url("../../../fonts/Nexa-XBold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Nexa";
-  src: url("../../../fonts/Nexa-Regular.woff2") format("woff2"), url("../../../fonts/Nexa-Regular.woff") format("woff");
+  src: url("../../../fonts/Nexa-Regular.woff2") format("woff2"),
+    url("../../../fonts/Nexa-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -305,7 +315,7 @@ html {
   outline: none;
   font-family: "Nexa", sans-serif;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 button {
@@ -379,8 +389,8 @@ li {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   overflow: hidden;
 }
 
@@ -394,7 +404,7 @@ li {
   width: 0;
   height: 0;
   -webkit-box-shadow: 0 0 260px 100px rgba(186, 255, 0, 0.3);
-          box-shadow: 0 0 260px 100px rgba(186, 255, 0, 0.3);
+  box-shadow: 0 0 260px 100px rgba(186, 255, 0, 0.3);
 }
 
 .button {
@@ -403,11 +413,11 @@ li {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding: 0.7em 1.4em;
   gap: 0.6em;
   border: 1px solid transparent;
@@ -432,7 +442,13 @@ li {
   color: #19141d;
   border-color: transparent;
   border-radius: 100px;
-  background: -webkit-gradient(linear, left top, right top, color-stop(25%, #baff00), color-stop(75%, #06ffcc));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(25%, #baff00),
+    color-stop(75%, #06ffcc)
+  );
   background: linear-gradient(90deg, #baff00 25%, #06ffcc 75%);
   background-size: 200% 100%;
   background-position: 50%;
@@ -476,7 +492,7 @@ li {
   opacity: 0;
   background: #a79fad;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
 }
@@ -500,12 +516,12 @@ li {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: inherit;
 }
 .ratioImage--contain img {
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .badge {
@@ -513,11 +529,11 @@ li {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   background: rgba(186, 255, 0, 0.08);
   border-radius: 100px;
   padding: 0.75em 1.5em;
@@ -540,8 +556,8 @@ li {
 .badge--column {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .logo {
@@ -584,7 +600,7 @@ li {
   width: 1em;
   height: 1em;
   -webkit-animation: spinner 1.2s linear infinite;
-          animation: spinner 1.2s linear infinite;
+  animation: spinner 1.2s linear infinite;
   animation-direction: reverse;
 }
 .spinner:after {
@@ -619,11 +635,11 @@ li {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   gap: 30px;
   z-index: 2;
   font-size: 25px;
@@ -633,8 +649,8 @@ li {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   gap: 0.8em;
 }
 .header__inner .button--primary {
@@ -653,7 +669,13 @@ li {
   left: 0;
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#baff00), to(#06ffcc));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#baff00),
+    to(#06ffcc)
+  );
   background: linear-gradient(90deg, #baff00 0%, #06ffcc 100%);
   opacity: 0;
   -webkit-transition: 0.3s ease-out;
@@ -676,9 +698,9 @@ li {
   padding: 10px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+  transition-duration: 0.5s;
   -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 .header.sticky:after {
   opacity: 0.2;
@@ -708,7 +730,9 @@ li {
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
 }
-.burger span, .burger::after, .burger::before {
+.burger span,
+.burger::after,
+.burger::before {
   position: absolute;
   left: 50%;
   width: 100%;
@@ -721,19 +745,19 @@ li {
 .burger span {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .burger::before {
   content: "";
   top: 0;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 .burger::after {
   content: "";
   bottom: 0;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 .burger:hover {
   opacity: 0.8;
@@ -744,12 +768,12 @@ li {
 .burger.active::before {
   top: 50%;
   -webkit-transform: translate(-50%, -50%) rotate(45deg);
-          transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 .burger.active::after {
   bottom: 50%;
   -webkit-transform: translate(-50%, 50%) rotate(-45deg);
-          transform: translate(-50%, 50%) rotate(-45deg);
+  transform: translate(-50%, 50%) rotate(-45deg);
 }
 .burger.active span {
   width: 0;
@@ -768,8 +792,8 @@ li {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 .hero__inner-banner {
   position: absolute;
@@ -794,7 +818,7 @@ li {
   border: 5px solid #baff00;
   opacity: 0.18;
   -webkit-transform: translate(-25px, -25px);
-          transform: translate(-25px, -25px);
+  transform: translate(-25px, -25px);
   z-index: -1;
 }
 .hero__inner-banner img {
@@ -811,8 +835,8 @@ li {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: calc(50% - 20px);
   max-width: 500px;
   margin-left: auto;
@@ -840,13 +864,13 @@ li {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-item-align: start;
-      align-self: flex-start;
+  align-self: flex-start;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-top: 30px;
   gap: 25px;
   width: 100%;
@@ -878,7 +902,7 @@ li {
   left: 45%;
   top: 50%;
   -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  transform: scale(1.2);
   opacity: 0.6;
 }
 
@@ -890,16 +914,16 @@ li {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 .note__inner-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 350px;
 }
 .note__inner-text {
@@ -908,11 +932,11 @@ li {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   gap: 10px;
   width: calc(100% - 380px);
   max-width: 650px;
@@ -929,9 +953,7 @@ li {
   padding: 80px 0 150px 0;
 }
 .nft__inner {
-  position: relative;
-  max-width: 860px;
-  margin: 0 auto;
+  /* gap: 12px !important; */
 }
 .nft__inner-banner {
   font-size: 20px;
@@ -952,8 +974,14 @@ li {
   width: calc(100% + 0.5em);
   height: calc(100% + 0.5em);
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background: -webkit-gradient(linear, left top, right top, from(#baff00), to(#06ffcc));
+  transform: translate(-50%, -50%);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#baff00),
+    to(#06ffcc)
+  );
   background: linear-gradient(90deg, #baff00 0%, #06ffcc 100%);
   border-radius: inherit;
   z-index: -1;
@@ -966,7 +994,7 @@ li {
   width: calc(100% + 4.2em);
   height: calc(100% + 4.2em);
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   background: #baff00;
   opacity: 0.02;
   border-radius: inherit;
@@ -980,10 +1008,10 @@ li {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   gap: 25px 30px;
   margin-bottom: 25px;
 }
@@ -999,13 +1027,13 @@ li {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  font-size: 32px;
-  padding: 1.4em 0;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: 28px;
+  padding: 1em;
   border-bottom: 1px solid #362f3b;
   color: #a79fad;
   margin-bottom: 0.8em;
@@ -1037,11 +1065,11 @@ li {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
   gap: 1em;
 }
 .nft__inner-footer h3 {
@@ -1054,8 +1082,8 @@ li {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   gap: 28px;
 }
 .nft__inner-footer-content .badge {
@@ -1074,8 +1102,8 @@ li {
 .nft__inner-footer-content .button--text {
   width: unset;
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
 }
 .nft__inner-footer-content-row {
   display: -webkit-box;
@@ -1085,8 +1113,8 @@ li {
 }
 .nft__inner-footer-content-row .badge {
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 0px;
-          flex: 1 0 0;
+  -ms-flex: 1 0 0px;
+  flex: 1 0 0;
 }
 .nft__bg {
   position: absolute;
@@ -1102,7 +1130,7 @@ li {
   top: 20px;
   right: 20px;
   -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  transform: scale(1.2);
   opacity: 0.5;
 }
 
@@ -1175,8 +1203,8 @@ li {
   }
   .header__inner {
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
   .header__inner-logo {
     padding-right: 20px;
@@ -1236,8 +1264,8 @@ li {
   .hero__inner-content {
     width: 100%;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     text-align: center;
     margin: 0 auto;
     max-width: 700px;
@@ -1340,13 +1368,13 @@ li {
   }
   .hero__inner-banner span {
     -webkit-transform: translate(-20px, -20px);
-            transform: translate(-20px, -20px);
+    transform: translate(-20px, -20px);
   }
   .note__inner {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     gap: 20px;
     padding: 20px;
     border-top: 1px solid #322a38;
@@ -1399,7 +1427,7 @@ li {
   }
   .hero__inner-banner span {
     -webkit-transform: translate(-10px, -15px);
-            transform: translate(-10px, -15px);
+    transform: translate(-10px, -15px);
     border-width: 3px;
   }
   .nft__inner-header h3 {

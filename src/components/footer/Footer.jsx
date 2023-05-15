@@ -51,7 +51,7 @@ const Footer = () => {
   return (
     <div style={{ marginTop: 30 }}>
       <footer id="footer" className="footer-light-style clearfix bg-style">
-        <div className="themesflat-container">
+        <div className="container">
           <div className="row">
             <div className="col-lg-4 col-md-12 col-12">
               <div className="widget widget-logo">
@@ -79,9 +79,9 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="col-lg-4 col-md-4 col-sm-5 col-5">
+            <div className=" col-md-4  col-12">
               <div className="widget widget-menu fl-st-3">
-                <h3 className="title-widget">PEPESUPER Sea Pro</h3>
+                <h3 className="title-widget">PEPE Super Grow</h3>
                 <ul style={{ color: "white" }}>
                   {resourcesList.map((item, index) => (
                     <li key={index}>
@@ -93,7 +93,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-lg-3 col-md-6 col-sm-7 col-12">
+            <div className="col-lg-3 col-md-6  col-12">
               <div className="widget widget-subcribe">
                 <h3 className="title-widget">Join Newsletter</h3>
                 <div className="form-subcribe">
